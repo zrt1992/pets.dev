@@ -10,11 +10,13 @@ use App\User_Type;
 use Validator;
 use Illuminate\Support\Facades\Auth;
 
-class UserController extends Controller {
+class UserController extends Controller
+{
 
     private $user;
 
-    public function __construct(User $user) {
+    public function __construct(User $user)
+    {
         $this->user = $user;
     }
 
@@ -24,7 +26,15 @@ class UserController extends Controller {
      * Register a new user into our system.
      *
      */
-    public function create(\App\Http\Requests\RegistrationRequest $request) {
+    public function logout()
+    {
+        if (Auth::logout()) {
+            return response()->json(['status' => 'fail', 'error' => 'could_not_create_token'], 500);
+        }
+    }
+
+    public function create(\App\Http\Requests\RegistrationRequest $request)
+    {
         $newUser = $this->user->create([
             'name' => $request->get('name'),
             'email' => $request->get('email'),
@@ -47,7 +57,8 @@ class UserController extends Controller {
      * Login a user and return his token which will be user with header Bearer {{token}}
      *
      */
-    public function authenticate(\App\Http\Requests\LoginRequest $request) {
+    public function authenticate(\App\Http\Requests\LoginRequest $request)
+    {
         $credentials = $request->only('email', 'password');
         try {
             if (!$token = JWTAuth::attempt($credentials)) {
@@ -69,7 +80,8 @@ class UserController extends Controller {
      * This will use to change the pasword of user.
      *
      */
-    function changePassword(\App\Http\Requests\ChangePasswordRequest $request) {
+    function changePassword(\App\Http\Requests\ChangePasswordRequest $request)
+    {
         $data = $request->all();
         $user = User::where('email', $data['email'])->get();
         //Changing the password only if is different of null

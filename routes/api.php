@@ -20,10 +20,12 @@ Route::group(['prefix' => 'v1'], function () {
     /**
      * Auth
      */
+    Route::post('logout', 'Api\UserController@logout');
     Route::post('login', 'Api\UserController@authenticate');
     Route::post('register', 'Api\UserController@create');
     Route::post('password/email', 'Auth\ForgotPasswordController@getResetToken');
     Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+    Route::resource('pets', 'Api\PetsController');
     /**
      * Product
      */
