@@ -52,6 +52,9 @@ class PetsController extends Controller
             'updated_at' => new DateTime()
         ]);
         $request->request->add([
+            'created_at' => new DateTime()
+        ]);
+        $request->request->add([
             'image' => $request->image
         ]);
         $this->pets->fill($request->all());
