@@ -180,6 +180,7 @@ return [
         Nestable\NestableServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
 
     ],
@@ -234,6 +235,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 
