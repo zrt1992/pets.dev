@@ -29,6 +29,7 @@ class Pets extends Migration
             $table->boolean('is_pedigree');
             $table->boolean('kcp_number');
             $table->boolean('is_vaccinated');
+            $table->double('price');
             $table->boolean('is_active');
             $table->boolean('is_verified');
             $table->boolean('require_checking');
