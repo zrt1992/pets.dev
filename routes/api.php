@@ -23,20 +23,8 @@ Route::group(['prefix' => 'v1'], function () {
     Route::post('logout', 'Api\UserController@logout');
     Route::post('login', 'Api\UserController@authenticate');
     Route::post('register', 'Api\UserController@create');
-    Route::post('password/email', 'Auth\ForgotPasswordController@getResetToken');
+    //Route::post('password/email', 'Auth\ForgotPasswordController@getResetToken');
     Route::post('password/reset', 'Auth\ResetPasswordController@reset');
     Route::resource('pets', 'Api\PetsController');
-    /**
-     * Product
-     */
-    Route::get('product', 'Api\ProductController@index');
-    /**
-     * Laundries
-     */
-    Route::post('nearest-laundry', 'Api\LaundryController@getNearByLocation');
-    Route::get('laundries', 'Api\LaundryController@laundries');
-    Route::group(['middleware' => 'jwt.auth',], function () {
-        Route::post('order', 'Api\OrdersController@store');
-        Route::post('password/change', 'Api\UserController@changePassword');
-    });
+
 });

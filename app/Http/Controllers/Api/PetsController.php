@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\api;
+
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -43,11 +44,6 @@ class PetsController extends Controller
      */
     public function store(\App\Http\Requests\PetAddRequest $request)
     {
-        //$k=$request->image;
-//        $request->file('image');
-//        dd( $request->all());
-//        $files = uploadInputs($request->image, 'category_images');
-//        dd($files);
         $request->request->add([
             'updated_at' => new DateTime()
         ]);
@@ -59,7 +55,6 @@ class PetsController extends Controller
         ]);
         $this->pets->fill($request->all());
         $this->pets->save();
-        dd($request->all());
         return response()->json($request->all());
     }
 

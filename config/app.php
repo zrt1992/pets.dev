@@ -180,7 +180,7 @@ return [
         Nestable\NestableServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
-
+        Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,
 
     ],
 
