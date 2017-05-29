@@ -180,12 +180,7 @@ return [
         Nestable\NestableServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
-<<<<<<< HEAD
         Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,
-=======
-        Laravel\Socialite\SocialiteServiceProvider::class,
-
->>>>>>> 1cd1e31cd7ce2d896f0acbd9eb1a5b89bde8f4dc
 
     ],
 
