@@ -20,8 +20,7 @@ class Pets extends Migration
             $table->double('age');
             $table->longText('description');
             $table->string('image');
-            $table->string('province');
-            $table->string('city');
+            $table->integer('province_id');
             $table->string('phone_no', 15);
             $table->string('email');
             $table->string('full_name');
@@ -30,6 +29,7 @@ class Pets extends Migration
             $table->boolean('is_pedigree');
             $table->boolean('kcp_number');
             $table->boolean('is_vaccinated');
+            $table->double('price');
             $table->boolean('is_active');
             $table->boolean('is_verified');
             $table->boolean('require_checking');

@@ -34,5 +34,10 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    'facebook' => [
+        'client_id' => '1663754530319404',
+        'client_secret' => 'b2c412f5b3752398703bdaa1eb2daab9',
+        'redirect' => config('const.facebook_redirect'),
+    ],
 
 ];
