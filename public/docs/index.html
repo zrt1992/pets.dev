@@ -220,62 +220,6 @@ $.ajax(settings).done(function (response) {
 <h3>HTTP Request</h3>
 <p><code>POST api/v1/password/reset</code></p>
 <!-- END_a62f1703e9fba891a3e20ff27854aac0 -->
-<!-- START_10b55fd4a517617fd27cfcc4d13f2f91 -->
-<h2>api/v1/pets</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET "http://pets.dev/api/v1/pets" \
--H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://pets.dev/api/v1/pets",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});</code></pre>
-<blockquote>
-<p>Example response:</p>
-</blockquote>
-<pre><code class="language-json">null</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET api/v1/pets</code></p>
-<p><code>HEAD api/v1/pets</code></p>
-<!-- END_10b55fd4a517617fd27cfcc4d13f2f91 -->
-<!-- START_aaf644d0cf1aeb89645454159ebe283d -->
-<h2>Show the form for creating a new resource.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET "http://pets.dev/api/v1/pets/create" \
--H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://pets.dev/api/v1/pets/create",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});</code></pre>
-<blockquote>
-<p>Example response:</p>
-</blockquote>
-<pre><code class="language-json">null</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET api/v1/pets/create</code></p>
-<p><code>HEAD api/v1/pets/create</code></p>
-<!-- END_aaf644d0cf1aeb89645454159ebe283d -->
 <!-- START_6b3de9951427e0eac2591caa37cc54d2 -->
 <h2>Store a newly created resource in storage.</h2>
 <blockquote>
@@ -299,17 +243,17 @@ $.ajax(settings).done(function (response) {
 <h3>HTTP Request</h3>
 <p><code>POST api/v1/pets</code></p>
 <!-- END_6b3de9951427e0eac2591caa37cc54d2 -->
-<!-- START_d7bd26e6c358874539c80569e7e94869 -->
-<h2>Display the specified resource.</h2>
+<!-- START_bdd3ccf7db9f96843f0bb3617eac0164 -->
+<h2>Show all categories</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET "http://pets.dev/api/v1/pets/{pet}" \
+<pre><code class="language-bash">curl -X GET "http://pets.dev/api/v1/categories" \
 -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://pets.dev/api/v1/pets/{pet}",
+    "url": "http://pets.dev/api/v1/categories",
     "method": "GET",
     "headers": {
         "accept": "application/json"
@@ -322,86 +266,52 @@ $.ajax(settings).done(function (response) {
 <blockquote>
 <p>Example response:</p>
 </blockquote>
-<pre><code class="language-json">null</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET api/v1/pets/{pet}</code></p>
-<p><code>HEAD api/v1/pets/{pet}</code></p>
-<!-- END_d7bd26e6c358874539c80569e7e94869 -->
-<!-- START_7399f92bfa984d7e7824e3b248fd62d8 -->
-<h2>Show the form for editing the specified resource.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET "http://pets.dev/api/v1/pets/{pet}/edit" \
--H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://pets.dev/api/v1/pets/{pet}/edit",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
+<pre><code class="language-json">[
+    {
+        "id": 16,
+        "parent_id": null,
+        "order": 1,
+        "name": "Reptiles",
+        "slug": "reptiles",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/WU3kujiveZWdM6SDCX9J.jpg",
+        "created_at": "2017-06-06 10:07:26",
+        "updated_at": "2017-06-06 10:07:26"
+    },
+    {
+        "id": 13,
+        "parent_id": null,
+        "order": 1,
+        "name": "Dogs",
+        "slug": "dogs",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/peqs4a8GoBMzW8eMzXfp.jpg",
+        "created_at": "2017-06-06 10:01:07",
+        "updated_at": "2017-06-06 10:01:07"
+    },
+    {
+        "id": 14,
+        "parent_id": null,
+        "order": 1,
+        "name": "Cats",
+        "slug": "cats",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/L36ADGtrcxY8qhAgLk0B.jpg",
+        "created_at": "2017-06-06 10:02:03",
+        "updated_at": "2017-06-06 10:02:03"
+    },
+    {
+        "id": 15,
+        "parent_id": null,
+        "order": 1,
+        "name": "Birds",
+        "slug": "birds",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/zEWfBybXwoBxxPoo1ydb.jpg",
+        "created_at": "2017-06-06 10:03:04",
+        "updated_at": "2017-06-06 10:03:04"
     }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});</code></pre>
-<blockquote>
-<p>Example response:</p>
-</blockquote>
-<pre><code class="language-json">null</code></pre>
+]</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/v1/pets/{pet}/edit</code></p>
-<p><code>HEAD api/v1/pets/{pet}/edit</code></p>
-<!-- END_7399f92bfa984d7e7824e3b248fd62d8 -->
-<!-- START_2c6e2d90eaaeaa4e187052843882a61b -->
-<h2>Update the specified resource in storage.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X PUT "http://pets.dev/api/v1/pets/{pet}" \
--H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://pets.dev/api/v1/pets/{pet}",
-    "method": "PUT",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});</code></pre>
-<h3>HTTP Request</h3>
-<p><code>PUT api/v1/pets/{pet}</code></p>
-<p><code>PATCH api/v1/pets/{pet}</code></p>
-<!-- END_2c6e2d90eaaeaa4e187052843882a61b -->
-<!-- START_89959b16d1bc76f3be11ce1d07bc8499 -->
-<h2>Remove the specified resource from storage.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X DELETE "http://pets.dev/api/v1/pets/{pet}" \
--H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://pets.dev/api/v1/pets/{pet}",
-    "method": "DELETE",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});</code></pre>
-<h3>HTTP Request</h3>
-<p><code>DELETE api/v1/pets/{pet}</code></p>
-<!-- END_89959b16d1bc76f3be11ce1d07bc8499 -->
+<p><code>GET api/v1/categories</code></p>
+<p><code>HEAD api/v1/categories</code></p>
+<!-- END_bdd3ccf7db9f96843f0bb3617eac0164 -->
       </div>
       <div class="dark-box">
                         <div class="lang-selector">

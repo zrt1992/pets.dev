@@ -20,11 +20,16 @@ Route::group(['prefix' => 'v1'], function () {
     /**
      * Auth
      */
+    //Logout
     Route::post('logout', 'Api\UserController@logout');
     Route::post('login', 'Api\UserController@authenticate');
+    //Register user
     Route::post('register', 'Api\UserController@create');
-    //Route::post('password/email', 'Auth\ForgotPasswordController@getResetToken');
+    //Password reset
     Route::post('password/reset', 'Auth\ResetPasswordController@reset');
-    Route::resource('pets', 'Api\PetsController');
+    //Storing  ad
+    Route::post('pets', 'Api\PetsController@store');
+    //Showing Categories
+    Route::get('categories', 'Api\Category@index');
 
 });

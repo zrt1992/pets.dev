@@ -177,7 +177,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         TCG\Voyager\VoyagerServiceProvider::class,
-        Nestable\NestableServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
         Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,
