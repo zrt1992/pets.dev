@@ -13,8 +13,7 @@ class Category extends Controller
      */
     public function index()
     {
-        $categories = \App\Category::all()->toArray();
-        $categoriesRes = [];
-        return response()->json($categories);
+        $categories = \App\Category::with('children')->get();
+        return response()->json($categories, 200);
     }
 }

@@ -1,124 +1,114 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use TCG\Voyager\Models\Setting;
 
 class SettingsTableSeeder extends Seeder
 {
+
     /**
-     * Auto generated seed file.
+     * Auto generated seed file
+     *
+     * @return void
      */
     public function run()
     {
-        $setting = $this->findSetting('title');
-        if (!$setting->exists) {
-            $setting->fill([
+        
+
+        \DB::table('settings')->delete();
+        
+        \DB::table('settings')->insert(array (
+            0 => 
+            array (
+                'id' => 1,
+                'key' => 'title',
                 'display_name' => 'Site Title',
-                'value'        => 'Site Title',
-                'details'      => '',
-                'type'         => 'text',
-                'order'        => 1,
-            ])->save();
-        }
-
-        $setting = $this->findSetting('description');
-        if (!$setting->exists) {
-            $setting->fill([
+                'value' => 'Petsone',
+                'details' => '',
+                'type' => 'text',
+                'order' => 1,
+            ),
+            1 => 
+            array (
+                'id' => 2,
+                'key' => 'description',
                 'display_name' => 'Site Description',
-                'value'        => 'Site Description',
-                'details'      => '',
-                'type'         => 'text',
-                'order'        => 2,
-            ])->save();
-        }
-
-        $setting = $this->findSetting('logo');
-        if (!$setting->exists) {
-            $setting->fill([
+                'value' => 'Site Description',
+                'details' => '',
+                'type' => 'text',
+                'order' => 2,
+            ),
+            2 => 
+            array (
+                'id' => 3,
+                'key' => 'logo',
                 'display_name' => 'Site Logo',
-                'value'        => '',
-                'details'      => '',
-                'type'         => 'image',
-                'order'        => 3,
-            ])->save();
-        }
-
-        $setting = $this->findSetting('admin_bg_image');
-        if (!$setting->exists) {
-            $setting->fill([
+                'value' => '',
+                'details' => '',
+                'type' => 'image',
+                'order' => 3,
+            ),
+            3 => 
+            array (
+                'id' => 4,
+                'key' => 'admin_bg_image',
                 'display_name' => 'Admin Background Image',
-                'value'        => '',
-                'details'      => '',
-                'type'         => 'image',
-                'order'        => 9,
-            ])->save();
-        }
-
-        $setting = $this->findSetting('admin_title');
-        if (!$setting->exists) {
-            $setting->fill([
+                'value' => '',
+                'details' => '',
+                'type' => 'image',
+                'order' => 9,
+            ),
+            4 => 
+            array (
+                'id' => 5,
+                'key' => 'admin_title',
                 'display_name' => 'Admin Title',
-                'value'        => 'Voyager',
-                'details'      => '',
-                'type'         => 'text',
-                'order'        => 4,
-            ])->save();
-        }
-
-        $setting = $this->findSetting('admin_description');
-        if (!$setting->exists) {
-            $setting->fill([
+                'value' => 'Petsone Administrator',
+                'details' => '',
+                'type' => 'text',
+                'order' => 4,
+            ),
+            5 => 
+            array (
+                'id' => 6,
+                'key' => 'admin_description',
                 'display_name' => 'Admin Description',
-                'value'        => 'Welcome to Voyager. The Missing Admin for Laravel',
-                'details'      => '',
-                'type'         => 'text',
-                'order'        => 5,
-            ])->save();
-        }
-
-        $setting = $this->findSetting('admin_loader');
-        if (!$setting->exists) {
-            $setting->fill([
+                'value' => 'Welcome to Voyager. The Missing Admin for Laravel',
+                'details' => '',
+                'type' => 'text',
+                'order' => 5,
+            ),
+            6 => 
+            array (
+                'id' => 7,
+                'key' => 'admin_loader',
                 'display_name' => 'Admin Loader',
-                'value'        => '',
-                'details'      => '',
-                'type'         => 'image',
-                'order'        => 6,
-            ])->save();
-        }
-
-        $setting = $this->findSetting('admin_icon_image');
-        if (!$setting->exists) {
-            $setting->fill([
+                'value' => '',
+                'details' => '',
+                'type' => 'image',
+                'order' => 6,
+            ),
+            7 => 
+            array (
+                'id' => 8,
+                'key' => 'admin_icon_image',
                 'display_name' => 'Admin Icon Image',
-                'value'        => '',
-                'details'      => '',
-                'type'         => 'image',
-                'order'        => 7,
-            ])->save();
-        }
-
-        $setting = $this->findSetting('google_analytics_client_id');
-        if (!$setting->exists) {
-            $setting->fill([
+                'value' => '',
+                'details' => '',
+                'type' => 'image',
+                'order' => 7,
+            ),
+            8 => 
+            array (
+                'id' => 9,
+                'key' => 'google_analytics_client_id',
                 'display_name' => 'Google Analytics Client ID',
-                'value'        => '',
-                'details'      => '',
-                'type'         => 'text',
-                'order'        => 9,
-            ])->save();
-        }
-    }
-
-    /**
-     * [setting description].
-     *
-     * @param [type] $key [description]
-     *
-     * @return [type] [description]
-     */
-    protected function findSetting($key)
-    {
-        return Setting::firstOrNew(['key' => $key]);
+                'value' => '',
+                'details' => '',
+                'type' => 'text',
+                'order' => 9,
+            ),
+        ));
+        
+        
     }
 }

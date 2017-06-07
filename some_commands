@@ -1,0 +1,4 @@
+php artisan iseed categories,data_rows,data_types,menus,menu_items,pages,permissions,permission_groups,permission_role,posts,roles,settings,translations --force
+
+
+php artisan migrate:generate  tbl1,tbl2

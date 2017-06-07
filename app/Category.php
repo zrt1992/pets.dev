@@ -10,6 +10,17 @@ class Category extends Model
     // public $timestamps = false;
     protected $guarded = [];
 
+    public function parent()
+    {
+        return $this->belongsTo('App\Category', 'parent_id');
+    }
+
+    public function children()
+    {
+        return $this->hasMany('App\Category', 'parent_id');
+    }
+
+
     public function getImageAttribute($val)
     {
         return \URL::to('storage/' . $val);
