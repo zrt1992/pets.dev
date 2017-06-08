@@ -16,7 +16,7 @@ use Illuminate\Http\Request;
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
 //});
-Route::group(['prefix' => 'v1'], function () {
+Route::group(['prefix' => 'v1', 'middleware' => ['cors']], function () {
     /**
      * Auth
      */
@@ -30,6 +30,9 @@ Route::group(['prefix' => 'v1'], function () {
     //Storing  ad
     Route::post('pets', 'Api\PetsController@store');
     //Showing Categories
-    Route::get('categories', 'Api\Category@index');
-
+    Route::group(['prefix' => 'categories'], function () {
+        Route::get('/', 'Api\Category@index');
+        //Showing parent cats
+        Route::get('parents', 'Api\Category@getParents');
+    });
 });
