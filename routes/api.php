@@ -34,5 +34,7 @@ Route::group(['prefix' => 'v1', 'middleware' => ['cors']], function () {
         Route::get('/', 'Api\Category@index');
         //Showing parent cats
         Route::get('parents', 'Api\Category@getParents');
+        //Showing childs
+        Route::any('childs/{parent_slug}', 'Api\Category@getChilds');
     });
 });

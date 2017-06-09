@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Support\Facades\Input;
 class Category extends Controller
 {
     /**
@@ -25,5 +25,13 @@ class Category extends Controller
     {
         $categories = \App\Category::where('parent_id', NULL)->orderBy('name', 'ASC')->get();
         return response()->json($categories, 200);
+    }
+
+    public function getChilds($parent_slug)
+    {
+        $parentSlug = $parent_slug;
+        $parentId = \App\Category::where('slug', $parentSlug)->firstOrFail()->id;
+        $breeds = \App\Category::where('parent_id', $parentId)->orderBy('name', 'ASC')->get();
+        return response()->json($breeds);
     }
 }
