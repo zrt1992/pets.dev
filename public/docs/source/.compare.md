@@ -197,7 +197,23 @@ $.ajax(settings).done(function (response) {
 
 ```bash
 curl -X POST "http://pets.dev/api/v1/pets" \
--H "Accept: application/json"
+-H "Accept: application/json" \
+    -d "category_id"="vel" \
+    -d "color_id"="vel" \
+    -d "age"="vel" \
+    -d "email"="mbeer@example.org" \
+    -d "full_name"="vel" \
+    -d "description"="vel" \
+    -d "phone_no"="vel" \
+    -d "city_id"="vel" \
+    -d "activation_code"="vel" \
+    -d "is_pedigree"="vel" \
+    -d "kcp_number"="vel" \
+    -d "is_vaccinated"="vel" \
+    -d "is_active"="vel" \
+    -d "is_verified"="vel" \
+    -d "require_checking"="vel" \
+
 ```
 
 ```javascript
@@ -206,6 +222,23 @@ var settings = {
     "crossDomain": true,
     "url": "http://pets.dev/api/v1/pets",
     "method": "POST",
+    "data": {
+        "category_id": "vel",
+        "color_id": "vel",
+        "age": "vel",
+        "email": "mbeer@example.org",
+        "full_name": "vel",
+        "description": "vel",
+        "phone_no": "vel",
+        "city_id": "vel",
+        "activation_code": "vel",
+        "is_pedigree": "vel",
+        "kcp_number": "vel",
+        "is_vaccinated": "vel",
+        "is_active": "vel",
+        "is_verified": "vel",
+        "require_checking": "vel"
+},
     "headers": {
         "accept": "application/json"
     }
@@ -220,6 +253,25 @@ $.ajax(settings).done(function (response) {
 ### HTTP Request
 `POST api/v1/pets`
 
+#### Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    category_id | string |  required  | 
+    color_id | string |  required  | 
+    age | string |  required  | 
+    email | email |  required  | 
+    full_name | string |  required  | 
+    description | string |  required  | 
+    phone_no | string |  required  | 
+    city_id | string |  required  | 
+    activation_code | string |  required  | 
+    is_pedigree | string |  required  | 
+    kcp_number | string |  required  | 
+    is_vaccinated | string |  required  | 
+    is_active | string |  required  | 
+    is_verified | string |  required  | 
+    require_checking | string |  required  | 
 
 <!-- END_6b3de9951427e0eac2591caa37cc54d2 -->
 
@@ -259,9 +311,10 @@ $.ajax(settings).done(function (response) {
         "order": 1,
         "name": "Reptiles",
         "slug": "reptiles",
-        "image": "http:\/\/localhost\/storage\/categories\/June2017\/WU3kujiveZWdM6SDCX9J.jpg",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/2qJB7npgD4nuhZdKDK9S.jpg",
         "created_at": "2017-06-06 10:07:26",
-        "updated_at": "2017-06-06 10:07:26"
+        "updated_at": "2017-06-09 12:47:05",
+        "children": []
     },
     {
         "id": 13,
@@ -269,9 +322,21 @@ $.ajax(settings).done(function (response) {
         "order": 1,
         "name": "Dogs",
         "slug": "dogs",
-        "image": "http:\/\/localhost\/storage\/categories\/June2017\/peqs4a8GoBMzW8eMzXfp.jpg",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/Dk2IQ0koyDHYvhTIFkR2.jpg",
         "created_at": "2017-06-06 10:01:07",
-        "updated_at": "2017-06-06 10:01:07"
+        "updated_at": "2017-06-09 12:48:16",
+        "children": [
+            {
+                "id": 17,
+                "parent_id": 13,
+                "order": 1,
+                "name": "Pug",
+                "slug": "pug",
+                "image": "http:\/\/localhost\/storage\/categories\/June2017\/qZpiNhW7FRfssXVYoyWB.jpg",
+                "created_at": "2017-06-07 08:03:18",
+                "updated_at": "2017-06-09 12:46:49"
+            }
+        ]
     },
     {
         "id": 14,
@@ -279,9 +344,21 @@ $.ajax(settings).done(function (response) {
         "order": 1,
         "name": "Cats",
         "slug": "cats",
-        "image": "http:\/\/localhost\/storage\/categories\/June2017\/L36ADGtrcxY8qhAgLk0B.jpg",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/91rW0SJSjwmjng0L5xgu.jpg",
         "created_at": "2017-06-06 10:02:03",
-        "updated_at": "2017-06-06 10:02:03"
+        "updated_at": "2017-06-09 12:47:56",
+        "children": [
+            {
+                "id": 18,
+                "parent_id": 14,
+                "order": 1,
+                "name": "Russian cat",
+                "slug": "russian-cat",
+                "image": "http:\/\/localhost\/storage\/categories\/June2017\/JS2XWBKaWGqatGOQOuuK.jpg",
+                "created_at": "2017-06-09 12:46:21",
+                "updated_at": "2017-06-09 12:46:21"
+            }
+        ]
     },
     {
         "id": 15,
@@ -289,9 +366,54 @@ $.ajax(settings).done(function (response) {
         "order": 1,
         "name": "Birds",
         "slug": "birds",
-        "image": "http:\/\/localhost\/storage\/categories\/June2017\/zEWfBybXwoBxxPoo1ydb.jpg",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/T7WWWF03uGZLxC7cfuBS.jpg",
         "created_at": "2017-06-06 10:03:04",
-        "updated_at": "2017-06-06 10:03:04"
+        "updated_at": "2017-06-09 12:47:31",
+        "children": [
+            {
+                "id": 19,
+                "parent_id": 15,
+                "order": 1,
+                "name": "African grey",
+                "slug": "african-grey",
+                "image": "http:\/\/localhost\/storage\/categories\/June2017\/N2RQrO6ZfHdChh9JiZrS.jpg",
+                "created_at": "2017-06-10 09:05:00",
+                "updated_at": "2017-06-10 09:05:00"
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "parent_id": 13,
+        "order": 1,
+        "name": "Pug",
+        "slug": "pug",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/qZpiNhW7FRfssXVYoyWB.jpg",
+        "created_at": "2017-06-07 08:03:18",
+        "updated_at": "2017-06-09 12:46:49",
+        "children": []
+    },
+    {
+        "id": 18,
+        "parent_id": 14,
+        "order": 1,
+        "name": "Russian cat",
+        "slug": "russian-cat",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/JS2XWBKaWGqatGOQOuuK.jpg",
+        "created_at": "2017-06-09 12:46:21",
+        "updated_at": "2017-06-09 12:46:21",
+        "children": []
+    },
+    {
+        "id": 19,
+        "parent_id": 15,
+        "order": 1,
+        "name": "African grey",
+        "slug": "african-grey",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/N2RQrO6ZfHdChh9JiZrS.jpg",
+        "created_at": "2017-06-10 09:05:00",
+        "updated_at": "2017-06-10 09:05:00",
+        "children": []
     }
 ]
 ```
@@ -303,4 +425,133 @@ $.ajax(settings).done(function (response) {
 
 
 <!-- END_bdd3ccf7db9f96843f0bb3617eac0164 -->
+
+<!-- START_e60c504ad79be082cc1e18d97dcf0736 -->
+## Get only parents
+
+> Example request:
+
+```bash
+curl -X GET "http://pets.dev/api/v1/categories/parents" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://pets.dev/api/v1/categories/parents",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+[
+    {
+        "id": 15,
+        "parent_id": null,
+        "order": 1,
+        "name": "Birds",
+        "slug": "birds",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/T7WWWF03uGZLxC7cfuBS.jpg",
+        "created_at": "2017-06-06 10:03:04",
+        "updated_at": "2017-06-09 12:47:31"
+    },
+    {
+        "id": 14,
+        "parent_id": null,
+        "order": 1,
+        "name": "Cats",
+        "slug": "cats",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/91rW0SJSjwmjng0L5xgu.jpg",
+        "created_at": "2017-06-06 10:02:03",
+        "updated_at": "2017-06-09 12:47:56"
+    },
+    {
+        "id": 13,
+        "parent_id": null,
+        "order": 1,
+        "name": "Dogs",
+        "slug": "dogs",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/Dk2IQ0koyDHYvhTIFkR2.jpg",
+        "created_at": "2017-06-06 10:01:07",
+        "updated_at": "2017-06-09 12:48:16"
+    },
+    {
+        "id": 16,
+        "parent_id": null,
+        "order": 1,
+        "name": "Reptiles",
+        "slug": "reptiles",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/2qJB7npgD4nuhZdKDK9S.jpg",
+        "created_at": "2017-06-06 10:07:26",
+        "updated_at": "2017-06-09 12:47:05"
+    }
+]
+```
+
+### HTTP Request
+`GET api/v1/categories/parents`
+
+`HEAD api/v1/categories/parents`
+
+
+<!-- END_e60c504ad79be082cc1e18d97dcf0736 -->
+
+<!-- START_803c6d683cf1f4271c5da712d753ed98 -->
+## api/v1/categories/childs/{parent_slug}
+
+> Example request:
+
+```bash
+curl -X GET "http://pets.dev/api/v1/categories/childs/{parent_slug}" \
+-H "Accept: application/json"
+```
+
+```javascript
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://pets.dev/api/v1/categories/childs/{parent_slug}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+```
+
+> Example response:
+
+```json
+null
+```
+
+### HTTP Request
+`GET api/v1/categories/childs/{parent_slug}`
+
+`HEAD api/v1/categories/childs/{parent_slug}`
+
+`POST api/v1/categories/childs/{parent_slug}`
+
+`PUT api/v1/categories/childs/{parent_slug}`
+
+`PATCH api/v1/categories/childs/{parent_slug}`
+
+`DELETE api/v1/categories/childs/{parent_slug}`
+
+
+<!-- END_803c6d683cf1f4271c5da712d753ed98 -->
 

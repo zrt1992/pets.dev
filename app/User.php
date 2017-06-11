@@ -4,10 +4,12 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Lunaweb\EmailVerification\Traits\CanVerifyEmail;
+use Lunaweb\EmailVerification\Contracts\CanVerifyEmail as CanVerifyEmailContract;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, CanVerifyEmail;
 
     /**
      * The attributes that are mass assignable.

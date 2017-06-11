@@ -904,22 +904,6 @@ class DataRowsTableSeeder extends Seeder
                 'details' => NULL,
                 'order' => 7,
             ),
-            53 => 
-            array (
-                'id' => 54,
-                'data_type_id' => 4,
-                'field' => 'is_pedigree',
-                'type' => 'checkbox',
-                'display_name' => 'Is Pedigree',
-                'required' => 1,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => NULL,
-                'order' => 6,
-            ),
         ));
         
         

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class PetImages extends Migration
+class ImagePets extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class PetImages extends Migration
      */
     public function up()
     {
-        Schema::create('pets_images', function (Blueprint $table) {
+        Schema::create('image_pets', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('pet_id');
+            $table->integer('pet_id')->unsigned();
+            $table->foreign('pet_id')->references('id')->on('pets');
             $table->string('image_url');
             $table->rememberToken();
             $table->timestamps();

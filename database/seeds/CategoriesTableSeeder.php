@@ -24,10 +24,9 @@ class CategoriesTableSeeder extends Seeder
                 'order' => 1,
                 'name' => 'Reptiles',
                 'slug' => 'reptiles',
-                'image' => 'categories/June2017/WU3kujiveZWdM6SDCX9J.jpg',
+                'image' => 'categories/June2017/2qJB7npgD4nuhZdKDK9S.jpg',
                 'created_at' => '2017-06-06 10:07:26',
-                'updated_at' => '2017-06-06 10:07:26',
-                'is_pedigree' => 0,
+                'updated_at' => '2017-06-09 12:47:05',
             ),
             1 => 
             array (
@@ -36,10 +35,9 @@ class CategoriesTableSeeder extends Seeder
                 'order' => 1,
                 'name' => 'Dogs',
                 'slug' => 'dogs',
-                'image' => 'categories/June2017/peqs4a8GoBMzW8eMzXfp.jpg',
+                'image' => 'categories/June2017/Dk2IQ0koyDHYvhTIFkR2.jpg',
                 'created_at' => '2017-06-06 10:01:07',
-                'updated_at' => '2017-06-06 10:01:07',
-                'is_pedigree' => 0,
+                'updated_at' => '2017-06-09 12:48:16',
             ),
             2 => 
             array (
@@ -48,10 +46,9 @@ class CategoriesTableSeeder extends Seeder
                 'order' => 1,
                 'name' => 'Cats',
                 'slug' => 'cats',
-                'image' => 'categories/June2017/L36ADGtrcxY8qhAgLk0B.jpg',
+                'image' => 'categories/June2017/91rW0SJSjwmjng0L5xgu.jpg',
                 'created_at' => '2017-06-06 10:02:03',
-                'updated_at' => '2017-06-06 10:02:03',
-                'is_pedigree' => 0,
+                'updated_at' => '2017-06-09 12:47:56',
             ),
             3 => 
             array (
@@ -60,10 +57,9 @@ class CategoriesTableSeeder extends Seeder
                 'order' => 1,
                 'name' => 'Birds',
                 'slug' => 'birds',
-                'image' => 'categories/June2017/zEWfBybXwoBxxPoo1ydb.jpg',
+                'image' => 'categories/June2017/T7WWWF03uGZLxC7cfuBS.jpg',
                 'created_at' => '2017-06-06 10:03:04',
-                'updated_at' => '2017-06-06 10:03:04',
-                'is_pedigree' => 0,
+                'updated_at' => '2017-06-09 12:47:31',
             ),
             4 => 
             array (
@@ -72,10 +68,20 @@ class CategoriesTableSeeder extends Seeder
                 'order' => 1,
                 'name' => 'Pug',
                 'slug' => 'pug',
-                'image' => 'categories/June2017/509I6fINecyH6peE35R2.jpg',
+                'image' => 'categories/June2017/qZpiNhW7FRfssXVYoyWB.jpg',
                 'created_at' => '2017-06-07 08:03:18',
-                'updated_at' => '2017-06-07 08:03:18',
-                'is_pedigree' => 1,
+                'updated_at' => '2017-06-09 12:46:49',
+            ),
+            5 => 
+            array (
+                'id' => 18,
+                'parent_id' => 14,
+                'order' => 1,
+                'name' => 'Russian cat',
+                'slug' => 'russian-cat',
+                'image' => 'categories/June2017/JS2XWBKaWGqatGOQOuuK.jpg',
+                'created_at' => '2017-06-09 12:46:21',
+                'updated_at' => '2017-06-09 12:46:21',
             ),
         ));
         

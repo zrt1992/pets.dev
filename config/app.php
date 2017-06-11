@@ -182,7 +182,8 @@ return [
         Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,
         Way\Generators\GeneratorsServiceProvider::class,
         Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class,
-        Orangehill\Iseed\IseedServiceProvider::class
+        Orangehill\Iseed\IseedServiceProvider::class,
+        Lunaweb\EmailVerification\Providers\EmailVerificationServiceProvider::class,
     ],
 
     /*
@@ -239,4 +240,5 @@ return [
 
     ],
 
+    'theme' => 'develop'
 ];

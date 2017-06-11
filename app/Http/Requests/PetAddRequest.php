@@ -24,26 +24,27 @@ class PetAddRequest extends FormRequest
     public function rules()
     {
         return [
-//            'category_id' => 'required',
-
-//            'color_id' => 'required',
-//            'age' => 'required',
-//            'email' => 'required|email',
-//            'full_name' => 'required',
-//            'description' => 'required',
-//            'phone_no' => 'required',
-//            'city_id' => 'required',
-//            'activation_code' => 'required',
-//            'is_pedigree' => 'required',
-//            'kcp_number' => 'required',
-//            'is_vaccinated' => 'required',
-//            'is_active' => 'required',
-//            'is_verified' => 'required',
-//            'require_checking' => 'required'
-
+            'category_id' => 'required',
+            'color_id' => 'required',
+            'age' => 'required',
+            'email' => 'required|email',
+            'full_name' => 'required',
+            'description' => 'required',
+            'phone_no' => 'required',
+            'city_id' => 'required',
+            'activation_code' => 'required',
+            'is_pedigree' => 'required',
+            'kcp_number' => 'required',
+            'is_vaccinated' => 'required',
+            'is_active' => 'required',
+            'is_verified' => 'required',
+            'require_checking' => 'required',
+            'images.*' => 'image',
         ];
     }
-    public function response(array $errors) {
+
+    public function response(array $errors)
+    {
         $transformed = [];
 
         foreach ($errors as $field => $message) {

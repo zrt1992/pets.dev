@@ -226,12 +226,45 @@ $.ajax(settings).done(function (response) {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST "http://pets.dev/api/v1/pets" \
--H "Accept: application/json"</code></pre>
+-H "Accept: application/json" \
+    -d "category_id"="vel" \
+    -d "color_id"="vel" \
+    -d "age"="vel" \
+    -d "email"="mbeer@example.org" \
+    -d "full_name"="vel" \
+    -d "description"="vel" \
+    -d "phone_no"="vel" \
+    -d "city_id"="vel" \
+    -d "activation_code"="vel" \
+    -d "is_pedigree"="vel" \
+    -d "kcp_number"="vel" \
+    -d "is_vaccinated"="vel" \
+    -d "is_active"="vel" \
+    -d "is_verified"="vel" \
+    -d "require_checking"="vel" \
+</code></pre>
 <pre><code class="language-javascript">var settings = {
     "async": true,
     "crossDomain": true,
     "url": "http://pets.dev/api/v1/pets",
     "method": "POST",
+    "data": {
+        "category_id": "vel",
+        "color_id": "vel",
+        "age": "vel",
+        "email": "mbeer@example.org",
+        "full_name": "vel",
+        "description": "vel",
+        "phone_no": "vel",
+        "city_id": "vel",
+        "activation_code": "vel",
+        "is_pedigree": "vel",
+        "kcp_number": "vel",
+        "is_vaccinated": "vel",
+        "is_active": "vel",
+        "is_verified": "vel",
+        "require_checking": "vel"
+},
     "headers": {
         "accept": "application/json"
     }
@@ -242,6 +275,94 @@ $.ajax(settings).done(function (response) {
 });</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/v1/pets</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>category_id</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>color_id</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>age</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>email</td>
+<td>email</td>
+<td>required</td>
+</tr>
+<tr>
+<td>full_name</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>phone_no</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>city_id</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>activation_code</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>is_pedigree</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>kcp_number</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>is_vaccinated</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>is_active</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>is_verified</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>require_checking</td>
+<td>string</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
 <!-- END_6b3de9951427e0eac2591caa37cc54d2 -->
 <!-- START_bdd3ccf7db9f96843f0bb3617eac0164 -->
 <h2>Show all categories</h2>
@@ -273,9 +394,10 @@ $.ajax(settings).done(function (response) {
         "order": 1,
         "name": "Reptiles",
         "slug": "reptiles",
-        "image": "http:\/\/localhost\/storage\/categories\/June2017\/WU3kujiveZWdM6SDCX9J.jpg",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/2qJB7npgD4nuhZdKDK9S.jpg",
         "created_at": "2017-06-06 10:07:26",
-        "updated_at": "2017-06-06 10:07:26"
+        "updated_at": "2017-06-09 12:47:05",
+        "children": []
     },
     {
         "id": 13,
@@ -283,9 +405,21 @@ $.ajax(settings).done(function (response) {
         "order": 1,
         "name": "Dogs",
         "slug": "dogs",
-        "image": "http:\/\/localhost\/storage\/categories\/June2017\/peqs4a8GoBMzW8eMzXfp.jpg",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/Dk2IQ0koyDHYvhTIFkR2.jpg",
         "created_at": "2017-06-06 10:01:07",
-        "updated_at": "2017-06-06 10:01:07"
+        "updated_at": "2017-06-09 12:48:16",
+        "children": [
+            {
+                "id": 17,
+                "parent_id": 13,
+                "order": 1,
+                "name": "Pug",
+                "slug": "pug",
+                "image": "http:\/\/localhost\/storage\/categories\/June2017\/qZpiNhW7FRfssXVYoyWB.jpg",
+                "created_at": "2017-06-07 08:03:18",
+                "updated_at": "2017-06-09 12:46:49"
+            }
+        ]
     },
     {
         "id": 14,
@@ -293,9 +427,21 @@ $.ajax(settings).done(function (response) {
         "order": 1,
         "name": "Cats",
         "slug": "cats",
-        "image": "http:\/\/localhost\/storage\/categories\/June2017\/L36ADGtrcxY8qhAgLk0B.jpg",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/91rW0SJSjwmjng0L5xgu.jpg",
         "created_at": "2017-06-06 10:02:03",
-        "updated_at": "2017-06-06 10:02:03"
+        "updated_at": "2017-06-09 12:47:56",
+        "children": [
+            {
+                "id": 18,
+                "parent_id": 14,
+                "order": 1,
+                "name": "Russian cat",
+                "slug": "russian-cat",
+                "image": "http:\/\/localhost\/storage\/categories\/June2017\/JS2XWBKaWGqatGOQOuuK.jpg",
+                "created_at": "2017-06-09 12:46:21",
+                "updated_at": "2017-06-09 12:46:21"
+            }
+        ]
     },
     {
         "id": 15,
@@ -303,15 +449,161 @@ $.ajax(settings).done(function (response) {
         "order": 1,
         "name": "Birds",
         "slug": "birds",
-        "image": "http:\/\/localhost\/storage\/categories\/June2017\/zEWfBybXwoBxxPoo1ydb.jpg",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/T7WWWF03uGZLxC7cfuBS.jpg",
         "created_at": "2017-06-06 10:03:04",
-        "updated_at": "2017-06-06 10:03:04"
+        "updated_at": "2017-06-09 12:47:31",
+        "children": [
+            {
+                "id": 19,
+                "parent_id": 15,
+                "order": 1,
+                "name": "African grey",
+                "slug": "african-grey",
+                "image": "http:\/\/localhost\/storage\/categories\/June2017\/N2RQrO6ZfHdChh9JiZrS.jpg",
+                "created_at": "2017-06-10 09:05:00",
+                "updated_at": "2017-06-10 09:05:00"
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "parent_id": 13,
+        "order": 1,
+        "name": "Pug",
+        "slug": "pug",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/qZpiNhW7FRfssXVYoyWB.jpg",
+        "created_at": "2017-06-07 08:03:18",
+        "updated_at": "2017-06-09 12:46:49",
+        "children": []
+    },
+    {
+        "id": 18,
+        "parent_id": 14,
+        "order": 1,
+        "name": "Russian cat",
+        "slug": "russian-cat",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/JS2XWBKaWGqatGOQOuuK.jpg",
+        "created_at": "2017-06-09 12:46:21",
+        "updated_at": "2017-06-09 12:46:21",
+        "children": []
+    },
+    {
+        "id": 19,
+        "parent_id": 15,
+        "order": 1,
+        "name": "African grey",
+        "slug": "african-grey",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/N2RQrO6ZfHdChh9JiZrS.jpg",
+        "created_at": "2017-06-10 09:05:00",
+        "updated_at": "2017-06-10 09:05:00",
+        "children": []
     }
 ]</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/v1/categories</code></p>
 <p><code>HEAD api/v1/categories</code></p>
 <!-- END_bdd3ccf7db9f96843f0bb3617eac0164 -->
+<!-- START_e60c504ad79be082cc1e18d97dcf0736 -->
+<h2>Get only parents</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET "http://pets.dev/api/v1/categories/parents" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://pets.dev/api/v1/categories/parents",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">[
+    {
+        "id": 15,
+        "parent_id": null,
+        "order": 1,
+        "name": "Birds",
+        "slug": "birds",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/T7WWWF03uGZLxC7cfuBS.jpg",
+        "created_at": "2017-06-06 10:03:04",
+        "updated_at": "2017-06-09 12:47:31"
+    },
+    {
+        "id": 14,
+        "parent_id": null,
+        "order": 1,
+        "name": "Cats",
+        "slug": "cats",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/91rW0SJSjwmjng0L5xgu.jpg",
+        "created_at": "2017-06-06 10:02:03",
+        "updated_at": "2017-06-09 12:47:56"
+    },
+    {
+        "id": 13,
+        "parent_id": null,
+        "order": 1,
+        "name": "Dogs",
+        "slug": "dogs",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/Dk2IQ0koyDHYvhTIFkR2.jpg",
+        "created_at": "2017-06-06 10:01:07",
+        "updated_at": "2017-06-09 12:48:16"
+    },
+    {
+        "id": 16,
+        "parent_id": null,
+        "order": 1,
+        "name": "Reptiles",
+        "slug": "reptiles",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/2qJB7npgD4nuhZdKDK9S.jpg",
+        "created_at": "2017-06-06 10:07:26",
+        "updated_at": "2017-06-09 12:47:05"
+    }
+]</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/v1/categories/parents</code></p>
+<p><code>HEAD api/v1/categories/parents</code></p>
+<!-- END_e60c504ad79be082cc1e18d97dcf0736 -->
+<!-- START_803c6d683cf1f4271c5da712d753ed98 -->
+<h2>api/v1/categories/childs/{parent_slug}</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET "http://pets.dev/api/v1/categories/childs/{parent_slug}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://pets.dev/api/v1/categories/childs/{parent_slug}",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/v1/categories/childs/{parent_slug}</code></p>
+<p><code>HEAD api/v1/categories/childs/{parent_slug}</code></p>
+<p><code>POST api/v1/categories/childs/{parent_slug}</code></p>
+<p><code>PUT api/v1/categories/childs/{parent_slug}</code></p>
+<p><code>PATCH api/v1/categories/childs/{parent_slug}</code></p>
+<p><code>DELETE api/v1/categories/childs/{parent_slug}</code></p>
+<!-- END_803c6d683cf1f4271c5da712d753ed98 -->
       </div>
       <div class="dark-box">
                         <div class="lang-selector">
