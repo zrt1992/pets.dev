@@ -23,14 +23,11 @@ class CategoryController extends Controller
     {
         $category = $this->category->findOrFail($id);
         $data['category'] = $category->toArray();
-        // dd($data['category']);
         return view('vendor.voyager.categories.edit', $data);
     }
 
     public function postAddCategory(Request $request, $categoryid = 0)
     {
-        //dd($request->all());
-
         $category = [
             'name' => $request->name,
             'slug' => slugify($request->name)

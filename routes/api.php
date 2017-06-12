@@ -26,5 +26,6 @@ Route::group(['prefix' => 'v1'], function () {
     //Route::post('password/email', 'Auth\ForgotPasswordController@getResetToken');
     Route::post('password/reset', 'Auth\ResetPasswordController@reset');
     Route::resource('pets', 'Api\PetsController');
+    Route::resource('search', 'Api\SearchController');
 
 });

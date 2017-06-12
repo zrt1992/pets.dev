@@ -14,20 +14,17 @@ class SearchController extends Controller
      */
     public function index(Request $request)
     {
-        $pet;
         if (empty($request->price_from) || empty($request->price_to)) {
 
-            $pet = \App\Pets::where($request->except(['page','price_to', 'price_from']))->paginate(10);
+            $pet = \App\Pets::where($request->except(['page', 'price_to', 'price_from']))->paginate(10);
         } else {
 
-            $pet = \App\Pets::where($request->except(['page','price_to', 'price_from']))->
-            where('price','>',$request->price_from)->
-            where('price','<',$request->price_to)->paginate(10);
+            $pet = \App\Pets::where($request->except(['page', 'price_to', 'price_from']))->
+            where('price', '>', $request->price_from)->
+            where('price', '<', $request->price_to)->paginate(10);
         }
         $pet->appends($request->all());
-        dd($pet->toArray());
-        dd(response()->json($pet->toArray()));
-
+        response()->json($pet->toArray());
 
 
     }

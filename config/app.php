@@ -180,12 +180,9 @@ return [
         Nestable\NestableServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
-<<<<<<< HEAD
         Mpociot\ApiDoc\ApiDocGeneratorServiceProvider::class,
-=======
-        Laravel\Socialite\SocialiteServiceProvider::class,
 
->>>>>>> 1cd1e31cd7ce2d896f0acbd9eb1a5b89bde8f4dc
+
 
     ],
 
@@ -238,8 +235,8 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Form' => Collective\Html\FormFacade::class,
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
-        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
-        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class
+
 
     ],
 
