@@ -14,10 +14,11 @@
 
     <!--Css for theme-->
     <!-- CSS Files -->
-    {!! Html::style('development/css/bootstrap.min.css') !!}
-    {!! Html::style('development/css/material-kit.css') !!}
-    <!-- CSS Just for demo purpose, don't include it in your project -->
+{!! Html::style('development/css/bootstrap.min.css') !!}
+{!! Html::style('development/css/material-kit.css') !!}
+<!-- CSS Just for demo purpose, don't include it in your project -->
     {!! Html::style('development/css/demo.css') !!}
+    @yield('css')
 </head>
 <body class="landing-page">
 <nav class="navbar navbar-transparent navbar-absolute">
@@ -109,5 +110,6 @@
 
     });
 </script>
+@yield('js')
 </body>
 </html>
