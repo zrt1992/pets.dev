@@ -1,208 +1,311 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use TCG\Voyager\Models\DataType;
-use TCG\Voyager\Models\MenuItem;
-use TCG\Voyager\Models\Page;
-use TCG\Voyager\Models\Translation;
 
 class TranslationsTableSeeder extends Seeder
 {
+
     /**
-     * Auto generated seed file.
+     * Auto generated seed file
      *
      * @return void
      */
     public function run()
     {
-        $this->dataTypesTranslations();
-        $this->pagesTranslations();
-        $this->menusTranslations();
-    }
+        
 
-    /**
-     * Auto generate DataTypes Translations.
-     *
-     * @return void
-     */
-    private function dataTypesTranslations()
-    {
-        // Adding translations for 'display_name_singular'
-        //
-        $_fld = 'display_name_singular';
-        $_tpl = ['data_types', $_fld];
-        $dtp = DataType::where($_fld, 'Post')->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Post');
-        }
-        $dtp = DataType::where($_fld, 'Page')->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Página');
-        }
-        $dtp = DataType::where($_fld, 'User')->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Utilizador');
-        }
-        $dtp = DataType::where($_fld, 'Category')->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Categoria');
-        }
-        $dtp = DataType::where($_fld, 'Menu')->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Menu');
-        }
-        $dtp = DataType::where($_fld, 'Role')->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Função');
-        }
-
-        // Adding translations for 'display_name_plural'
-        //
-        $_fld = 'display_name_plural';
-        $_tpl = ['data_types', $_fld];
-        $dtp = DataType::where($_fld, 'Posts')->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Posts');
-        }
-        $dtp = DataType::where($_fld, 'Pages')->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Páginas');
-        }
-        $dtp = DataType::where($_fld, 'Users')->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Utilizadores');
-        }
-        $dtp = DataType::where($_fld, 'Categories')->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Categorias');
-        }
-        $dtp = DataType::where($_fld, 'Menus')->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Menus');
-        }
-        $dtp = DataType::where($_fld, 'Roles')->firstOrFail();
-        if ($dtp->exists) {
-            $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Funções');
-        }
-    }
-
-    /**
-     * Auto generate Pages Translations.
-     *
-     * @return void
-     */
-    private function pagesTranslations()
-    {
-        $page = Page::where('slug', 'hello-world')->firstOrFail();
-        if ($page->exists) {
-            $_arr = $this->arr(['pages', 'title'], $page->id);
-            $this->trans('pt', $_arr, 'Olá Mundo');
-            /**
-             * For configuring additional languages use it e.g.
-             *
-             * ```
-             *   $this->trans('es', $_arr, 'hola-mundo');
-             *   $this->trans('de', $_arr, 'hallo-welt');
-             * ```
-             */
-            $_arr = $this->arr(['pages', 'slug'], $page->id);
-            $this->trans('pt', $_arr, 'ola-mundo');
-
-            $_arr = $this->arr(['pages', 'body'], $page->id);
-            $this->trans('pt', $_arr, '<p>Olá Mundo. Scallywag grog swab Cat o\'nine tails scuttle rigging hardtack cable nipper Yellow Jack. Handsomely spirits knave lad killick landlubber or just lubber deadlights chantey pinnace crack Jennys tea cup. Provost long clothes black spot Yellow Jack bilged on her anchor league lateen sail case shot lee tackle.</p>'
-                                        ."\r\n".'<p>Ballast spirits fluke topmast me quarterdeck schooner landlubber or just lubber gabion belaying pin. Pinnace stern galleon starboard warp carouser to go on account dance the hempen jig jolly boat measured fer yer chains. Man-of-war fire in the hole nipperkin handsomely doubloon barkadeer Brethren of the Coast gibbet driver squiffy.</p>');
-        }
-    }
-
-    /**
-     * Auto generate Menus Translations.
-     *
-     * @return void
-     */
-    private function menusTranslations()
-    {
-        $_tpl = ['menu_items', 'title'];
-        $_item = $this->mItem('Dashboard');
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Painel de Controle');
-        }
-
-        $_item = $this->mItem('Media');
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Media');
-        }
-
-        $_item = $this->mItem('Posts');
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Publicações');
-        }
-
-        $_item = $this->mItem('Users');
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Utilizadores');
-        }
-
-        $_item = $this->mItem('Categories');
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Categorias');
-        }
-
-        $_item = $this->mItem('Pages');
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Páginas');
-        }
-
-        $_item = $this->mItem('Roles');
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Funções');
-        }
-
-        $_item = $this->mItem('Tools');
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Ferramentas');
-        }
-
-        $_item = $this->mItem('Menu Builder');
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Menus');
-        }
-
-        $_item = $this->mItem('Database');
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Base de dados');
-        }
-
-        $_item = $this->mItem('Settings');
-        if ($_item->exists) {
-            $this->trans('pt', $this->arr($_tpl, $_item->id), 'Configurações');
-        }
-    }
-
-    private function mItem($title)
-    {
-        return MenuItem::where('title', $title)->firstOrFail();
-    }
-
-    private function arr($par, $id)
-    {
-        return [
-            'table_name'  => $par[0],
-            'column_name' => $par[1],
-            'foreign_key' => $id,
-        ];
-    }
-
-    private function trans($lang, $keys, $value)
-    {
-        $_t = Translation::firstOrNew(array_merge($keys, [
-            'locale' => $lang,
-        ]));
-
-        if (!$_t->exists) {
-            $_t->fill(array_merge(
-                $keys,
-                ['value' => $value]
-            ))->save();
-        }
+        \DB::table('translations')->delete();
+        
+        \DB::table('translations')->insert(array (
+            0 => 
+            array (
+                'id' => 1,
+                'table_name' => 'data_types',
+                'column_name' => 'display_name_singular',
+                'foreign_key' => 1,
+                'locale' => 'pt',
+                'value' => 'Post',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            1 => 
+            array (
+                'id' => 2,
+                'table_name' => 'data_types',
+                'column_name' => 'display_name_singular',
+                'foreign_key' => 2,
+                'locale' => 'pt',
+                'value' => 'Página',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            2 => 
+            array (
+                'id' => 3,
+                'table_name' => 'data_types',
+                'column_name' => 'display_name_singular',
+                'foreign_key' => 3,
+                'locale' => 'pt',
+                'value' => 'Utilizador',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            3 => 
+            array (
+                'id' => 4,
+                'table_name' => 'data_types',
+                'column_name' => 'display_name_singular',
+                'foreign_key' => 4,
+                'locale' => 'pt',
+                'value' => 'Categoria',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            4 => 
+            array (
+                'id' => 5,
+                'table_name' => 'data_types',
+                'column_name' => 'display_name_singular',
+                'foreign_key' => 5,
+                'locale' => 'pt',
+                'value' => 'Menu',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            5 => 
+            array (
+                'id' => 6,
+                'table_name' => 'data_types',
+                'column_name' => 'display_name_singular',
+                'foreign_key' => 6,
+                'locale' => 'pt',
+                'value' => 'Função',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            6 => 
+            array (
+                'id' => 7,
+                'table_name' => 'data_types',
+                'column_name' => 'display_name_plural',
+                'foreign_key' => 1,
+                'locale' => 'pt',
+                'value' => 'Posts',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            7 => 
+            array (
+                'id' => 8,
+                'table_name' => 'data_types',
+                'column_name' => 'display_name_plural',
+                'foreign_key' => 2,
+                'locale' => 'pt',
+                'value' => 'Páginas',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            8 => 
+            array (
+                'id' => 9,
+                'table_name' => 'data_types',
+                'column_name' => 'display_name_plural',
+                'foreign_key' => 3,
+                'locale' => 'pt',
+                'value' => 'Utilizadores',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            9 => 
+            array (
+                'id' => 10,
+                'table_name' => 'data_types',
+                'column_name' => 'display_name_plural',
+                'foreign_key' => 4,
+                'locale' => 'pt',
+                'value' => 'Categorias',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            10 => 
+            array (
+                'id' => 11,
+                'table_name' => 'data_types',
+                'column_name' => 'display_name_plural',
+                'foreign_key' => 5,
+                'locale' => 'pt',
+                'value' => 'Menus',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            11 => 
+            array (
+                'id' => 12,
+                'table_name' => 'data_types',
+                'column_name' => 'display_name_plural',
+                'foreign_key' => 6,
+                'locale' => 'pt',
+                'value' => 'Funções',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            12 => 
+            array (
+                'id' => 13,
+                'table_name' => 'pages',
+                'column_name' => 'title',
+                'foreign_key' => 1,
+                'locale' => 'pt',
+                'value' => 'Olá Mundo',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            13 => 
+            array (
+                'id' => 14,
+                'table_name' => 'pages',
+                'column_name' => 'slug',
+                'foreign_key' => 1,
+                'locale' => 'pt',
+                'value' => 'ola-mundo',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            14 => 
+            array (
+                'id' => 15,
+                'table_name' => 'pages',
+                'column_name' => 'body',
+                'foreign_key' => 1,
+                'locale' => 'pt',
+                'value' => '<p>Olá Mundo. Scallywag grog swab Cat o\'nine tails scuttle rigging hardtack cable nipper Yellow Jack. Handsomely spirits knave lad killick landlubber or just lubber deadlights chantey pinnace crack Jennys tea cup. Provost long clothes black spot Yellow Jack bilged on her anchor league lateen sail case shot lee tackle.</p>
+<p>Ballast spirits fluke topmast me quarterdeck schooner landlubber or just lubber gabion belaying pin. Pinnace stern galleon starboard warp carouser to go on account dance the hempen jig jolly boat measured fer yer chains. Man-of-war fire in the hole nipperkin handsomely doubloon barkadeer Brethren of the Coast gibbet driver squiffy.</p>',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            15 => 
+            array (
+                'id' => 16,
+                'table_name' => 'menu_items',
+                'column_name' => 'title',
+                'foreign_key' => 1,
+                'locale' => 'pt',
+                'value' => 'Painel de Controle',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            16 => 
+            array (
+                'id' => 17,
+                'table_name' => 'menu_items',
+                'column_name' => 'title',
+                'foreign_key' => 2,
+                'locale' => 'pt',
+                'value' => 'Media',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            17 => 
+            array (
+                'id' => 18,
+                'table_name' => 'menu_items',
+                'column_name' => 'title',
+                'foreign_key' => 3,
+                'locale' => 'pt',
+                'value' => 'Publicações',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            18 => 
+            array (
+                'id' => 19,
+                'table_name' => 'menu_items',
+                'column_name' => 'title',
+                'foreign_key' => 4,
+                'locale' => 'pt',
+                'value' => 'Utilizadores',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            19 => 
+            array (
+                'id' => 20,
+                'table_name' => 'menu_items',
+                'column_name' => 'title',
+                'foreign_key' => 5,
+                'locale' => 'pt',
+                'value' => 'Categorias',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            20 => 
+            array (
+                'id' => 21,
+                'table_name' => 'menu_items',
+                'column_name' => 'title',
+                'foreign_key' => 6,
+                'locale' => 'pt',
+                'value' => 'Páginas',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            21 => 
+            array (
+                'id' => 22,
+                'table_name' => 'menu_items',
+                'column_name' => 'title',
+                'foreign_key' => 7,
+                'locale' => 'pt',
+                'value' => 'Funções',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            22 => 
+            array (
+                'id' => 23,
+                'table_name' => 'menu_items',
+                'column_name' => 'title',
+                'foreign_key' => 8,
+                'locale' => 'pt',
+                'value' => 'Ferramentas',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            23 => 
+            array (
+                'id' => 24,
+                'table_name' => 'menu_items',
+                'column_name' => 'title',
+                'foreign_key' => 9,
+                'locale' => 'pt',
+                'value' => 'Menus',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            24 => 
+            array (
+                'id' => 25,
+                'table_name' => 'menu_items',
+                'column_name' => 'title',
+                'foreign_key' => 10,
+                'locale' => 'pt',
+                'value' => 'Base de dados',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+            25 => 
+            array (
+                'id' => 26,
+                'table_name' => 'menu_items',
+                'column_name' => 'title',
+                'foreign_key' => 11,
+                'locale' => 'pt',
+                'value' => 'Configurações',
+                'created_at' => '2017-05-23 07:07:37',
+                'updated_at' => '2017-05-23 07:07:37',
+            ),
+        ));
+        
+        
     }
 }

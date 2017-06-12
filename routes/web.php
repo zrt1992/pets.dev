@@ -11,13 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
+Route::get('/', 'HomeController@index')->name('homeMain');
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//Route::get('post-ad')
 
 
 Route::group(['prefix' => 'admin'], function () {

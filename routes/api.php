@@ -16,16 +16,25 @@ use Illuminate\Http\Request;
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
 //});
-Route::group(['prefix' => 'v1'], function () {
+Route::group(['prefix' => 'v1', 'middleware' => ['cors']], function () {
     /**
      * Auth
      */
+    //Logout
     Route::post('logout', 'Api\UserController@logout');
     Route::post('login', 'Api\UserController@authenticate');
+    //Register user
     Route::post('register', 'Api\UserController@create');
-    //Route::post('password/email', 'Auth\ForgotPasswordController@getResetToken');
+    //Password reset
     Route::post('password/reset', 'Auth\ResetPasswordController@reset');
-    Route::resource('pets', 'Api\PetsController');
-    Route::resource('search', 'Api\SearchController');
-
+    //Storing  ad
+    Route::post('pets', 'Api\PetsController@store');
+    //Showing Categories
+    Route::group(['prefix' => 'categories'], function () {
+        Route::get('/', 'Api\Category@index');
+        //Showing parent cats
+        Route::get('parents', 'Api\Category@getParents');
+        //Showing childs
+        Route::any('childs/{parent_slug}', 'Api\Category@getChilds');
+    });
 });

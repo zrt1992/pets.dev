@@ -220,74 +220,51 @@ $.ajax(settings).done(function (response) {
 <h3>HTTP Request</h3>
 <p><code>POST api/v1/password/reset</code></p>
 <!-- END_a62f1703e9fba891a3e20ff27854aac0 -->
-<!-- START_10b55fd4a517617fd27cfcc4d13f2f91 -->
-<h2>api/v1/pets</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET "http://pets.dev/api/v1/pets" \
--H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://pets.dev/api/v1/pets",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});</code></pre>
-<blockquote>
-<p>Example response:</p>
-</blockquote>
-<pre><code class="language-json">null</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET api/v1/pets</code></p>
-<p><code>HEAD api/v1/pets</code></p>
-<!-- END_10b55fd4a517617fd27cfcc4d13f2f91 -->
-<!-- START_aaf644d0cf1aeb89645454159ebe283d -->
-<h2>Show the form for creating a new resource.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET "http://pets.dev/api/v1/pets/create" \
--H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://pets.dev/api/v1/pets/create",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});</code></pre>
-<blockquote>
-<p>Example response:</p>
-</blockquote>
-<pre><code class="language-json">null</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET api/v1/pets/create</code></p>
-<p><code>HEAD api/v1/pets/create</code></p>
-<!-- END_aaf644d0cf1aeb89645454159ebe283d -->
 <!-- START_6b3de9951427e0eac2591caa37cc54d2 -->
 <h2>Store a newly created resource in storage.</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST "http://pets.dev/api/v1/pets" \
--H "Accept: application/json"</code></pre>
+-H "Accept: application/json" \
+    -d "category_id"="vel" \
+    -d "color_id"="vel" \
+    -d "age"="vel" \
+    -d "email"="mbeer@example.org" \
+    -d "full_name"="vel" \
+    -d "description"="vel" \
+    -d "phone_no"="vel" \
+    -d "city_id"="vel" \
+    -d "activation_code"="vel" \
+    -d "is_pedigree"="vel" \
+    -d "kcp_number"="vel" \
+    -d "is_vaccinated"="vel" \
+    -d "is_active"="vel" \
+    -d "is_verified"="vel" \
+    -d "require_checking"="vel" \
+</code></pre>
 <pre><code class="language-javascript">var settings = {
     "async": true,
     "crossDomain": true,
     "url": "http://pets.dev/api/v1/pets",
     "method": "POST",
+    "data": {
+        "category_id": "vel",
+        "color_id": "vel",
+        "age": "vel",
+        "email": "mbeer@example.org",
+        "full_name": "vel",
+        "description": "vel",
+        "phone_no": "vel",
+        "city_id": "vel",
+        "activation_code": "vel",
+        "is_pedigree": "vel",
+        "kcp_number": "vel",
+        "is_vaccinated": "vel",
+        "is_active": "vel",
+        "is_verified": "vel",
+        "require_checking": "vel"
+},
     "headers": {
         "accept": "application/json"
     }
@@ -298,18 +275,314 @@ $.ajax(settings).done(function (response) {
 });</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/v1/pets</code></p>
+<h4>Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>category_id</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>color_id</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>age</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>email</td>
+<td>email</td>
+<td>required</td>
+</tr>
+<tr>
+<td>full_name</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>phone_no</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>city_id</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>activation_code</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>is_pedigree</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>kcp_number</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>is_vaccinated</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>is_active</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>is_verified</td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td>require_checking</td>
+<td>string</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
 <!-- END_6b3de9951427e0eac2591caa37cc54d2 -->
-<!-- START_d7bd26e6c358874539c80569e7e94869 -->
-<h2>Display the specified resource.</h2>
+<!-- START_bdd3ccf7db9f96843f0bb3617eac0164 -->
+<h2>Show all categories</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X GET "http://pets.dev/api/v1/pets/{pet}" \
+<pre><code class="language-bash">curl -X GET "http://pets.dev/api/v1/categories" \
 -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://pets.dev/api/v1/pets/{pet}",
+    "url": "http://pets.dev/api/v1/categories",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">[
+    {
+        "id": 16,
+        "parent_id": null,
+        "order": 1,
+        "name": "Reptiles",
+        "slug": "reptiles",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/2qJB7npgD4nuhZdKDK9S.jpg",
+        "created_at": "2017-06-06 10:07:26",
+        "updated_at": "2017-06-09 12:47:05",
+        "children": []
+    },
+    {
+        "id": 13,
+        "parent_id": null,
+        "order": 1,
+        "name": "Dogs",
+        "slug": "dogs",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/Dk2IQ0koyDHYvhTIFkR2.jpg",
+        "created_at": "2017-06-06 10:01:07",
+        "updated_at": "2017-06-09 12:48:16",
+        "children": [
+            {
+                "id": 17,
+                "parent_id": 13,
+                "order": 1,
+                "name": "Pug",
+                "slug": "pug",
+                "image": "http:\/\/localhost\/storage\/categories\/June2017\/qZpiNhW7FRfssXVYoyWB.jpg",
+                "created_at": "2017-06-07 08:03:18",
+                "updated_at": "2017-06-09 12:46:49"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "parent_id": null,
+        "order": 1,
+        "name": "Cats",
+        "slug": "cats",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/91rW0SJSjwmjng0L5xgu.jpg",
+        "created_at": "2017-06-06 10:02:03",
+        "updated_at": "2017-06-09 12:47:56",
+        "children": [
+            {
+                "id": 18,
+                "parent_id": 14,
+                "order": 1,
+                "name": "Russian cat",
+                "slug": "russian-cat",
+                "image": "http:\/\/localhost\/storage\/categories\/June2017\/JS2XWBKaWGqatGOQOuuK.jpg",
+                "created_at": "2017-06-09 12:46:21",
+                "updated_at": "2017-06-09 12:46:21"
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "parent_id": null,
+        "order": 1,
+        "name": "Birds",
+        "slug": "birds",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/T7WWWF03uGZLxC7cfuBS.jpg",
+        "created_at": "2017-06-06 10:03:04",
+        "updated_at": "2017-06-09 12:47:31",
+        "children": [
+            {
+                "id": 19,
+                "parent_id": 15,
+                "order": 1,
+                "name": "African grey",
+                "slug": "african-grey",
+                "image": "http:\/\/localhost\/storage\/categories\/June2017\/N2RQrO6ZfHdChh9JiZrS.jpg",
+                "created_at": "2017-06-10 09:05:00",
+                "updated_at": "2017-06-10 09:05:00"
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "parent_id": 13,
+        "order": 1,
+        "name": "Pug",
+        "slug": "pug",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/qZpiNhW7FRfssXVYoyWB.jpg",
+        "created_at": "2017-06-07 08:03:18",
+        "updated_at": "2017-06-09 12:46:49",
+        "children": []
+    },
+    {
+        "id": 18,
+        "parent_id": 14,
+        "order": 1,
+        "name": "Russian cat",
+        "slug": "russian-cat",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/JS2XWBKaWGqatGOQOuuK.jpg",
+        "created_at": "2017-06-09 12:46:21",
+        "updated_at": "2017-06-09 12:46:21",
+        "children": []
+    },
+    {
+        "id": 19,
+        "parent_id": 15,
+        "order": 1,
+        "name": "African grey",
+        "slug": "african-grey",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/N2RQrO6ZfHdChh9JiZrS.jpg",
+        "created_at": "2017-06-10 09:05:00",
+        "updated_at": "2017-06-10 09:05:00",
+        "children": []
+    }
+]</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/v1/categories</code></p>
+<p><code>HEAD api/v1/categories</code></p>
+<!-- END_bdd3ccf7db9f96843f0bb3617eac0164 -->
+<!-- START_e60c504ad79be082cc1e18d97dcf0736 -->
+<h2>Get only parents</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET "http://pets.dev/api/v1/categories/parents" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://pets.dev/api/v1/categories/parents",
+    "method": "GET",
+    "headers": {
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});</code></pre>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<pre><code class="language-json">[
+    {
+        "id": 15,
+        "parent_id": null,
+        "order": 1,
+        "name": "Birds",
+        "slug": "birds",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/T7WWWF03uGZLxC7cfuBS.jpg",
+        "created_at": "2017-06-06 10:03:04",
+        "updated_at": "2017-06-09 12:47:31"
+    },
+    {
+        "id": 14,
+        "parent_id": null,
+        "order": 1,
+        "name": "Cats",
+        "slug": "cats",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/91rW0SJSjwmjng0L5xgu.jpg",
+        "created_at": "2017-06-06 10:02:03",
+        "updated_at": "2017-06-09 12:47:56"
+    },
+    {
+        "id": 13,
+        "parent_id": null,
+        "order": 1,
+        "name": "Dogs",
+        "slug": "dogs",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/Dk2IQ0koyDHYvhTIFkR2.jpg",
+        "created_at": "2017-06-06 10:01:07",
+        "updated_at": "2017-06-09 12:48:16"
+    },
+    {
+        "id": 16,
+        "parent_id": null,
+        "order": 1,
+        "name": "Reptiles",
+        "slug": "reptiles",
+        "image": "http:\/\/localhost\/storage\/categories\/June2017\/2qJB7npgD4nuhZdKDK9S.jpg",
+        "created_at": "2017-06-06 10:07:26",
+        "updated_at": "2017-06-09 12:47:05"
+    }
+]</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/v1/categories/parents</code></p>
+<p><code>HEAD api/v1/categories/parents</code></p>
+<!-- END_e60c504ad79be082cc1e18d97dcf0736 -->
+<!-- START_803c6d683cf1f4271c5da712d753ed98 -->
+<h2>api/v1/categories/childs/{parent_slug}</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET "http://pets.dev/api/v1/categories/childs/{parent_slug}" \
+-H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://pets.dev/api/v1/categories/childs/{parent_slug}",
     "method": "GET",
     "headers": {
         "accept": "application/json"
@@ -324,84 +597,13 @@ $.ajax(settings).done(function (response) {
 </blockquote>
 <pre><code class="language-json">null</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/v1/pets/{pet}</code></p>
-<p><code>HEAD api/v1/pets/{pet}</code></p>
-<!-- END_d7bd26e6c358874539c80569e7e94869 -->
-<!-- START_7399f92bfa984d7e7824e3b248fd62d8 -->
-<h2>Show the form for editing the specified resource.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET "http://pets.dev/api/v1/pets/{pet}/edit" \
--H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://pets.dev/api/v1/pets/{pet}/edit",
-    "method": "GET",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});</code></pre>
-<blockquote>
-<p>Example response:</p>
-</blockquote>
-<pre><code class="language-json">null</code></pre>
-<h3>HTTP Request</h3>
-<p><code>GET api/v1/pets/{pet}/edit</code></p>
-<p><code>HEAD api/v1/pets/{pet}/edit</code></p>
-<!-- END_7399f92bfa984d7e7824e3b248fd62d8 -->
-<!-- START_2c6e2d90eaaeaa4e187052843882a61b -->
-<h2>Update the specified resource in storage.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X PUT "http://pets.dev/api/v1/pets/{pet}" \
--H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://pets.dev/api/v1/pets/{pet}",
-    "method": "PUT",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});</code></pre>
-<h3>HTTP Request</h3>
-<p><code>PUT api/v1/pets/{pet}</code></p>
-<p><code>PATCH api/v1/pets/{pet}</code></p>
-<!-- END_2c6e2d90eaaeaa4e187052843882a61b -->
-<!-- START_89959b16d1bc76f3be11ce1d07bc8499 -->
-<h2>Remove the specified resource from storage.</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X DELETE "http://pets.dev/api/v1/pets/{pet}" \
--H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "http://pets.dev/api/v1/pets/{pet}",
-    "method": "DELETE",
-    "headers": {
-        "accept": "application/json"
-    }
-}
-
-$.ajax(settings).done(function (response) {
-    console.log(response);
-});</code></pre>
-<h3>HTTP Request</h3>
-<p><code>DELETE api/v1/pets/{pet}</code></p>
-<!-- END_89959b16d1bc76f3be11ce1d07bc8499 -->
+<p><code>GET api/v1/categories/childs/{parent_slug}</code></p>
+<p><code>HEAD api/v1/categories/childs/{parent_slug}</code></p>
+<p><code>POST api/v1/categories/childs/{parent_slug}</code></p>
+<p><code>PUT api/v1/categories/childs/{parent_slug}</code></p>
+<p><code>PATCH api/v1/categories/childs/{parent_slug}</code></p>
+<p><code>DELETE api/v1/categories/childs/{parent_slug}</code></p>
+<!-- END_803c6d683cf1f4271c5da712d753ed98 -->
       </div>
       <div class="dark-box">
                         <div class="lang-selector">

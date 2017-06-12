@@ -17,10 +17,10 @@ class CreateCategoriesTable extends Migration
             $table->increments('id');
             $table->integer('parent_id')->unsigned()->nullable()->default(null);
             $table->foreign('parent_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('set null');
-            $table->integer('order')->default(1);
+            $table->integer('order')->default(0);
             $table->string('name');
             $table->string('slug')->unique();
-            $table->string('image',255)->default(null);
+            $table->string('image', 255)->nullable;
             $table->timestamps();
         });
     }

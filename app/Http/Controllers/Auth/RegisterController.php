@@ -6,6 +6,8 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Lunaweb\EmailVerification\Traits\VerifiesEmail;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -20,14 +22,19 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+    use RegistersUsers, VerifiesEmail;
 
     /**
      * Where to redirect users after registration.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
+
+    protected function redirectTo()
+    {
+        return route('partnerThankyou');
+    }
 
     /**
      * Create a new controller instance.
@@ -36,13 +43,14 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('guest', ['except' => ['verify']]);
     }
+
 
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -57,7 +65,7 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return User
      */
     protected function create(array $data)
@@ -67,5 +75,11 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    public function resendVerificationEmail()
+    {
+        \App::make('Lunaweb\EmailVerification\EmailVerification')->sendVerifyLink(Auth::user());
+        return redirect()->back()->with('status', 'Verification email successfuly sent.');
     }
 }
