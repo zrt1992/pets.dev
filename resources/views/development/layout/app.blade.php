@@ -14,11 +14,14 @@
 
     <!--Css for theme-->
     <!-- CSS Files -->
-{!! Html::style('development/css/bootstrap.min.css') !!}
-{!! Html::style('development/css/material-kit.css') !!}
-<!-- CSS Just for demo purpose, don't include it in your project -->
-    {!! Html::style('development/css/demo.css') !!}
+    {!! Html::script('development/js/jquery.min.js') !!}
+    {!! Html::style('development/css/bootstrap.min.css') !!}
+    {!! Html::style('development/css/material-kit.css') !!}
+
+    @yield('headjs')
     @yield('css')
+
+
 </head>
 <body class="landing-page">
 <nav class="navbar navbar-transparent navbar-absolute">
@@ -51,7 +54,7 @@
                     <a>&nbsp;</a>
                 </li>
                 <li>
-                    <a routerLink="post-ad" class="btn btn-warning" routerLinkActive="active">
+                    <a href="{{route('postadd')}}" class="btn btn-warning" routerLinkActive="active">
                         Post free ad
                     </a>
                 </li>
@@ -92,7 +95,7 @@
     </div>
 </footer>
 <!--   Core JS Files   -->
-{!! Html::script('development/js/jquery.min.js') !!}
+
 {!! Html::script('development/js/bootstrap.min.js') !!}
 {!! Html::script('development/js/material.min.js') !!}
 
@@ -105,11 +108,7 @@
 
 <!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
 {!! Html::script('development/js/material-kit.js') !!}
-<script type="text/javascript">
-    $(document).ready(function () {
 
-    });
-</script>
 @yield('js')
 </body>
 </html>

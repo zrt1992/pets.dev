@@ -26,4 +26,5 @@ class HomeController extends Controller
         $data['categories'] = \App\Category::where('parent_id', NULL)->orderBy('name', 'ASC')->get();
         return view('welcome', $data);
     }
+
 }
